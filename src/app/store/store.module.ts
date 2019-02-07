@@ -8,6 +8,8 @@ import { CounterDirective } from "./counter.directive";
 
 import { StoreComponent } from "./store.component";
 import { cartSummaryComponent } from "./cartSummary.component";
+import { CartDetailComponent } from "./cartDetail.component";
+import { CheckoutComponent } from "./checkout.component";
 
 @NgModule({
     imports: [
@@ -16,10 +18,14 @@ import { cartSummaryComponent } from "./cartSummary.component";
     declarations: [
         StoreComponent, 
         CounterDirective,
-        cartSummaryComponent
+        cartSummaryComponent,
+        CartDetailComponent,
+        CheckoutComponent
     ],
     exports: [
-        StoreComponent
+        StoreComponent,
+        CartDetailComponent,
+        CheckoutComponent
     ]
 })
 
