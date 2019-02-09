@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { ModelModule } from "../model/model.module";
+import { RouterModule } from "@angular/router";
 
 import { CounterDirective } from "./counter.directive";
 
@@ -13,7 +14,10 @@ import { CheckoutComponent } from "./checkout.component";
 
 @NgModule({
     imports: [
-        ModelModule, BrowserModule, FormsModule
+        ModelModule, 
+        BrowserModule, 
+        FormsModule,
+        RouterModule
     ],
     declarations: [
         StoreComponent, 

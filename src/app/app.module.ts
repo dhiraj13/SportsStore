@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { StoreFirstGuard } from "./storeFirst.guard";
+
 import { StoreModule } from "./store/store.module";
 import { RouterModule } from "@angular/router";
 
@@ -22,13 +24,21 @@ import { CartDetailComponent } from "./store/cartDetail.component";
            location in which the component that corresponds to the current URL should be displayed.    
     */
     RouterModule.forRoot([
-      { path: "store", component: StoreComponent },
-      { path: "cart", component: CartDetailComponent },
-      { path: "checkout", component: CheckoutComponent },
+      {
+        path: "store", component: StoreComponent, 
+        canActivate: [StoreFirstGuard]
+      },
+      {
+        path: "cart", component: CartDetailComponent, 
+        canActivate: [StoreFirstGuard]
+      },
+      {
+        path: "checkout", component: CheckoutComponent, 
+        canActivate: [StoreFirstGuard]
+      },
       { path: "**", redirectTo: "/store" }
-    ])
-  ],
-  providers: [],
+    ])],
+  providers: [StoreFirstGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
