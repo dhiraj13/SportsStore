@@ -12,6 +12,7 @@ import { RestDataSource } from "./rest.datasource";
 import { Cart } from "./cart.model";
 import { Order } from "./order.model";
 import { AuthService } from "./auth.service";
+import { ConnectionService } from "./connection.service";
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { AuthService } from "./auth.service";
         OrderRepository,
         { provide: StaticDataSource, useClass: RestDataSource },
         RestDataSource,
-        AuthService
+        AuthService,
+        ConnectionService
     ]
 })
 
